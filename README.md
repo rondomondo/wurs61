@@ -4,7 +4,7 @@ This repo contains a web-based implementation of the Wender Utah Rating Scale (W
 
 ## About the Tool
 
-[wurs65](index.html)
+[wurs61](https://abcdef.ai/banana/wurs61)
 
 The Wender Utah Rating Scale was developed to aid in the retrospective diagnosis of childhood ADHD in adults. The assessment consists of 61 questions about childhood behaviors, with a subset of 25 questions specifically associated with ADHD symptoms.
 
