@@ -96,7 +96,7 @@
 
     <h1>Wender Utah Rating Scale for the Attention Deficit Hyperactivity Disorder</></h1>
 
-    <p><strong>Overview:</strong>The <a target="_blank" href="https://scholar.google.com/scholar?q=%22Wender+Utah+Rating+Scale%22">Wender Utah Rating Scale</a> can be used to assess adults for Attention Deficit Hyperactivity Disorder with a subset of 25 questions associated with that diagnosis. The following 61 questions ask you to recall your childhood behavior. Please rate each item based on how you were *as a child*.</p>
+    <p><strong>Overview:</strong>The <a target="_blank" href="https://scholar.google.com/scholar?q=%22Wender+Utah+Rating+Scale%22">Wender Utah Rating Scale</a> can be used to assess adults for Attention Deficit Hyperactivity Disorder with a subset of 25 questions associated with that diagnosis. The following 61 questions ask you to recall your <i><strong>childhood behavior</strong></i>. Please rate each item based on how you were <i><strong></string>as a child</strong></i>.</p>
 
     <!-- Result Display Area (Top) -->
     <div id="scoreResultTop" class="score-display" style="display: none;">
@@ -692,7 +692,7 @@
 
     </form>
 
-    <!-- Result Display Area (Bottom) -->
+    <!-- Result Display Area (Bottom of page) -->
     <div id="scoreResultBottom" class="score-display" style="display: none;">
         <h2>Scores</h2>
         <p>Total Score (All 61 questions): <strong id="totalScoreBottom">--</strong></p>
@@ -730,7 +730,7 @@
             // Clear previous highlights
             document.querySelectorAll('tr.unanswered-question').forEach(row => {
                 row.classList.remove('unanswered-question');
-                row.style.backgroundColor = ''; // Also reset direct style if applied before
+                row.style.backgroundColor = ''; 
             });
 
             for (let i = 1; i <= totalQuestions; i++) {
@@ -750,8 +750,7 @@
                      // Highlight the unanswered question row
                      if(questionRow) {
                          questionRow.classList.add('unanswered-question');
-                         // Optional: Direct style for immediate visual feedback if CSS takes time
-                         // questionRow.style.backgroundColor = '#fff3cd';
+                         
                      }
                 } else {
                     totalScore += value;
@@ -761,7 +760,7 @@
                      // Remove highlight if it was previously marked as unanswered (e.g., user fixed it)
                      if(questionRow) {
                          questionRow.classList.remove('unanswered-question');
-                         // questionRow.style.backgroundColor = ''; // Reset direct style
+                        
                      }
                 }
             }
@@ -781,7 +780,7 @@
 
              if (!allAnswered) {
                  alert('Please answer all highlighted questions before calculating the score.');
-                 // Clear previous results and hide sections
+                 // Clear previous results and hide the sections
                  totalScoreTopEl.textContent = '--';
                  adhdScoreTopEl.textContent = '--';
                  indicatorTopEl.textContent = '';
@@ -793,16 +792,16 @@
                  indicatorBottomEl.textContent = '';
                  disclaimerBottomEl.style.display = 'none';
                  scoreResultBottomEl.style.display = 'none';
-                 return; // Stop the function
+                 return; 
             }
 
-            // Display the scores in both top and bottom sections
+            // Display the scores in both top and bottom sections for the lazy
             totalScoreTopEl.textContent = totalScore;
             adhdScoreTopEl.textContent = adhdScore;
             totalScoreBottomEl.textContent = totalScore;
             adhdScoreBottomEl.textContent = adhdScore;
 
-            // Set indicator and disclaimer based on ADHD score
+            // Set indicator and disclaimer based on ADHD score suggestion
             if (adhdScore >= adhdCutoff) {
                 indicatorTopEl.textContent = 'ADHD Subscore is at or above the suggestive cutoff.';
                 indicatorTopEl.className = 'indicator indicator-above'; // Apply CSS class
@@ -825,7 +824,7 @@
             scoreResultTopEl.style.display = 'block';
             scoreResultBottomEl.style.display = 'block';
 
-            // Optional: Scroll to the top result after calculation
+            // Scroll bck to the top result after calculation
             scoreResultTopEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     </script>
